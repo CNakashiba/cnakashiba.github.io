@@ -1,0 +1,827 @@
+/* 
+h1 = 60px, serif 
+h2 = 48px, serif
+h3 = 30px, sans serif
+h4 = 24px, serif 
+p = 16px, sans serif
+small = 12px, sans serif
+*/ 
+
+* {
+	box-sizing: border-box; 
+}
+
+body {
+	font-size: 16px;
+}
+h1{
+	font-size: 3.75em;
+	font-family: 'Cormorant Garamond', serif;
+	font-weight: 300;	
+	text-align: center;
+}
+h2{
+	font-size: 3em;
+	font-family: 'Cormorant Garamond', serif;
+	font-weight: 300;
+	color: rgb(230, 242, 240);
+	text-align: center;
+}
+h4 {
+	font-size: 1.5em;
+	font-family: 'Cormorant Garamond', serif;
+	font-weight: 300;
+	text-align: center;
+}
+p {
+	font-size: 1em;
+	font-family: 'Source Sans Pro', sans-serif;
+	font-weight: 300;
+	text-align: center;
+}
+small, input, label, button {
+	font-size: 0.75em;
+	font-family: 'Source Sans Pro', sans-serif;
+	font-weight: 300;
+	text-align: center;
+}
+small.footnotes {
+	font-weight: 300i;
+	font-style: italic;
+}
+.a a, .b a, .headerArrow a {
+	font-size: 1em;
+	font-family: 'Source Sans Pro', sans-serif;
+	font-weight: 400;	
+	text-decoration: none;
+	color: rgb(84, 84, 84);
+}
+.a a:active {
+	color: rgb(60, 116, 118);
+}
+
+.a a:visited {
+	/*color: rgb(130, 19, 16);*/
+	color: #800020;
+}
+.a a.active, .a a:hover {
+	border-bottom:1px solid black;
+	padding: 5px;
+	color: rgb(130, 19, 16);
+	color: #bd1414;
+}
+
+.b a.active, .headerArrow a.active, .b a:hover, .headerArrow a:hover {
+	border-bottom:1px solid white;
+	padding: 5px;
+	color: white;
+}
+
+/* ========================= parallax ========================= */
+/* reference: http://callmenick.com/post/simple-parallax-scrolling-effect */
+
+section.module.parallax {
+  height: 100vh;
+  background-position: 50% 0;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+section.module.parallax-1 { 
+  background-image: url("../images/detroit_unsplash_2000.jpg");
+}
+section.module.parallax-2 {
+  background-image: url("../images/lake michigan_unsplash_cut.jpg");
+}
+section.module.parallax-3 {
+  background-position: 50% 100%;	
+  background-image: url("../images/belle_isle_detroit_unsplash.jpg");
+}
+
+
+/* ========================= BODY ========================= */
+body.coachingIntroduction { 
+  display: grid;
+  /*min-height: 100vh;*/
+  grid-template-rows: minmax(10vh, auto) minmax(90vh, auto) minmax(100vh, auto) minmax(100vh, auto) minmax(100vh, auto) minmax(100vh, auto) minmax(40vh, auto) minmax(20vh, auto);
+  grid-template-areas: "a"
+                       "b"
+                       "c"
+                       "d"
+                       "e"
+                       "f"
+                       "g"		
+                       "h"
+}
+
+
+/* =================== Grid A - HEADER =================== */
+/*body.coachingIntroduction */#header {
+	height: 4.4em;
+	grid-area: a;	
+}
+
+#header #headerContents {
+	display: flex;
+	width: 100%;
+	align-items: center;
+	justify-content: space-between;
+	background: white;
+	padding: 10px 20px 10px 20px;
+	position: fixed; z-index: 1;
+	flex-wrap: wrap;
+}
+
+#headerContents .logo {
+	width: 7em;
+    display: flex;
+    flex-direction: column;
+}
+
+.headerLogo {
+	width: 100%;
+}
+
+#headerLinks {
+	width: 25em;
+	display: flex;
+	justify-content: space-around;
+	/*border-bottom: 1px solid black;*/
+}
+
+#headerLinks li {
+	text-align: center;
+	width: 5em;
+}
+#aboutUnderline {
+	border-bottom: 1px solid black;
+}
+
+#coachingUnderline {
+	border-bottom: 1px solid black;
+}
+
+#applyUnderline {
+	border-bottom: 1px solid black;
+}
+
+#headerLinks ul a {
+	display: block;
+	color: black;
+	font-family: 'Source Sans Pro', sans-serif;
+}
+
+/* =================== Grid B - INTRO =================== */
+#intro {
+	grid-area: b;	
+	background-size: cover;
+	position: relative;
+	/*min-height:500px;*/
+	/*min-height: 90vh;*/
+}
+
+#introImage {
+	width: 100%;
+	position: absolute;
+	top: 0;
+	/*min-height:500px;*/
+	/*min-height: 90vh;*/
+}
+
+#intro .clearOverlay {
+	height: 300px;
+	width: 100%;
+	top: 0;
+	left: 0;
+	background: rgba(255, 255, 255, .6);
+	position: relative;
+	top: 22%;
+}
+
+.intro {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	position: relative;
+}
+.intro h1 {
+	width: 100%;
+	position: absolute;
+	padding-top: 15%;
+}
+
+.introLine {
+	position: absolute;
+	left: 45%;
+	height: 140px;
+	width: 10%;
+	border-style: none none solid none;
+	border-width: 1px;
+	border-color: black;
+}
+
+.intro p {
+	width: 100%;
+	position: absolute;
+	padding-top: 17%;
+	font-weight: 400;
+}
+
+
+/* =================== Grid C - D3 =================== */
+.about {
+	grid-area: c;
+	width: 100%;
+	height: 100%;
+/*	align-content: center;
+*/	background-color: rgba(230,242,240,.8);
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 17vh 0 0 0;
+}
+
+.about h2 {
+	padding-top: 10%;
+	color: rgb(84, 84, 84);
+	color: black;
+	max-width: 70%;
+}
+
+.about p {
+	max-width: 80%;
+	font-size: 1.25em;
+	font-family: 'Cormorant Garamond', serif;
+	font-weight: 300;
+	text-align: center;
+}
+
+.aboutLine {
+	height: 3vh;
+	width: 10%;
+	border-style: none none solid none;
+	border-width: 1px;
+	border-color: black;
+}
+
+.about p {
+	padding-top: 25px;
+}
+
+.about img {
+	padding: 5vh 0 0 35vh;
+}
+
+
+/* =================== Grid D - FACTS =================== */
+#facts {
+	grid-area: d;
+	/*background: url("../images/lake michigan_unsplash_cut.jpg");*/
+	background-size: cover;
+	/*width: 100%;*/
+	border: none;
+	/*min-height:500px;*/
+}
+
+.facts {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 10vh 0 0 0;
+}
+
+.facts p.largerP {
+	font-size: 1.875em;
+	font-family: 'Source Sans Pro', sans-serif;
+	font-weight: 300;
+	text-align: center;
+	line-height: 1.2;
+	width: 120vh;
+	padding: 5vh 0 10vh 0;
+	color: #3d7376;	
+}
+
+.facts .factsOverlay {
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	background-color: rgba(21, 40, 54, .7);
+	padding-bottom: 12vh;
+	display: flex;
+	flex-direction: column;
+}
+
+.facts .factsOverlay .threeColumns {
+	display: flex;
+	color: white;
+	padding-top: 10vh;
+}
+
+.facts .factsOverlay .threeColumns div{
+	flex: 1;
+	padding: 0 5vh;
+	border-style: none solid none none;
+	border-width: 1px;
+	border-color: white;
+}
+
+.facts .factsOverlay .threeColumns div.noBorder {
+	border-style: none none none none;
+}
+
+.facts .factsOverlay .threeColumns div h1{
+	line-height: 150%;
+	font-weight: 300;
+}
+
+.facts .factsOverlay .threeColumns div h4{
+	padding-bottom: 2vh;
+}
+
+.facts .factsOverlay .threeColumns div p{
+	line-height: 120%;
+}
+
+.facts .factsOverlay .footnotes {
+	padding-top: 10vh;
+	color: white;
+}
+
+
+/* =================== Grid E - COACHES =================== */
+#coaching {
+	grid-area: e;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	background: rgb(175, 175, 175);
+	color: white;
+	padding-top: 15vh;
+	width: 100vw;
+	height: 100vh;
+}
+
+#coaching h2 {
+	color: white;
+	padding-bottom: 2vh;
+}
+
+.coachesLine {
+	width: 20vh;
+	border-style: none none solid none;
+	border-width: 1px;
+	border-color: white;
+}
+
+#coaching p {
+	max-width: 80%;
+	font-size: 1.2em;
+	font-family: 'Cormorant Garamond', serif;
+	font-weight: 300;
+	text-align: center;
+	padding-top: 2vh;
+}
+
+.coaches {
+	display: flex;
+	align-items: center;
+	padding: 5%;
+	/*width: 100%;*/
+	/*width: 75vw;
+	height: 30vh;*/
+}
+
+#carousel {
+	flex: 1;
+	top: 2%;
+	width: 90vw;
+	height: 50vh;
+/*	width: 85vw;
+	height: 60vh;*/
+	white-space: nowrap;
+	overflow: hidden;
+	position: relative;
+}
+
+#slide1 {
+	background: red;
+}
+#slide2 {
+	background: green;
+}
+#slide3 {
+	background: blue;
+}
+#slide4 {
+	background: yellow;
+}
+#slide5 {
+	background: purple;
+}
+.arrow {
+	width: 5%;
+	position: absolute;
+	top: 45%;
+	transform: translate(-50%);
+	cursor: pointer;
+}
+#right-arrow {
+  right: 5px;
+}
+#left-arrow {
+  left: 50px;
+}
+
+.slide-image {
+	width: 90vw;
+	height: 50vh;
+	background-position: center;
+	background-size: cover;
+	display: inline-block;
+}
+
+.slide {
+	width: 90vw;
+	height: 50vh;
+	display: flex;
+	flex-direction: row;
+}
+
+.pText {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.pText h4 {
+	font-size: 1.2em;
+	font-family: 'Source Sans Pro', sans-serif;
+	font-family: 'Lato', sans-serif;
+	font-weight: 400;
+	text-align: center;
+	line-height: 300%; 
+	color: black;
+}
+
+
+/* =================== Grid F - STUDENTS =================== */
+#students {
+	grid-area: f;
+	background-size: cover;
+	color: white;
+	padding: 19vh 0;
+	/*min-height:500px;		*/
+}
+
+.who h2 {
+	color: white;
+	padding: 15vh 0 5vh 0;
+}
+
+.whoLine {
+	margin-left: 45%;
+	width: 20vh;
+	border-style: none none solid none;
+	border-width: 1px;
+	border-color: white;
+}
+
+.who p {
+	color: white;
+	padding: 4vh 20vh 0 20vh;
+	line-height: 1.5;
+}
+
+
+/* =================== Grid G - FORM =================== */
+#apply {
+	grid-area: g;
+	background: rgb(230, 242, 240);
+	width: 100%;
+	text-align: center;
+}
+
+#apply div h2 {
+	color: rgb(84, 84, 84);
+	padding: 10%;
+}
+
+#apply div h2 a {
+	/*font-size: 3em;*/
+	font-family: 'Cormorant Garamond', serif: 
+	font-weight: 300;
+	text-decoration: none;
+	/*color: rgb(84, 84, 84);*/
+	color: #bd1414;
+}
+
+
+/* =================== Grid H - FOOTER =================== */
+footer {
+	background: rgb(21, 40 ,54);
+}
+
+.footer {
+	grid-area: h;	
+	display: flex;
+	align-items: center;
+	width: 100%;
+	height: 8em;
+	justify-content: space-around;
+}
+
+.footer div{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex: 1;
+	height: 5em;
+	border-style: none solid none none;
+	border-width: .25px;
+	border-color: white;
+}
+
+.footer div.noBorder, .footer div.noBorder{
+	border-style: none none none none;
+}
+
+.headerArrow a img{
+	width: 2.5em;
+}
+
+.kompasFooter {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.kompasFooter .logo {
+	width: 15em;
+	display: flex;
+	flex-direction: column;
+}
+
+.kompasFooter .logo img {
+	width: 1.5em;
+}
+
+.kompasFooter .logo small {
+	color: white;
+}
+
+.contact {
+	color: white;
+	width: 20em;
+	display: flex;
+	flex-direction: column;	
+}
+
+.socialLinks img {
+	width: 50%;
+}
+
+.footer .kompasFooter small {
+	padding-top: 1em;
+	font-weight: lighter;	
+}
+
+.footer .contact small {
+	padding-bottom: 1.15em;
+	font-weight: lighter;	
+}
+
+.contact small a {
+	text-decoration: none;
+	color: white;
+	font-weight: bold;
+}
+.contact small a:hover {
+	color: rgb(150, 150, 150);
+}
+
+
+/*===========================================================*/
+/*===========================================================*/
+body.application { 
+  display: grid;
+  grid-template-rows: minmax(10vh, auto) minmax(100vh, auto) minmax(22vh, auto);
+  grid-template-areas: "a"
+                       "b"
+                       "c"
+}
+
+#applicationForm {
+	grid-area: b;
+	background: rgb(224, 233, 232);
+	display: flex;
+	width: 100%;
+	flex-direction: column;
+	justify-content: center;
+}
+
+#applicationForm h2{
+	flex: 1;
+	padding: 5% 0 0 0;
+	color: rgb(84, 84, 84);
+	font-weight: 400;
+}
+
+#applicationForm .form {
+	flex: 1;
+	padding: 5% 0 5% 15%;
+}
+
+form .main {
+	padding: 2.4%;
+}
+
+input, select, option, #challengesList p, button {
+	background: white;
+	border: 2px solid rgb(224, 233, 232);
+	color: black;
+	font-weight: 300;
+	text-align: left;
+	width: 80%;
+}
+
+textarea {
+	background: white;
+	border: 2px solid rgb(224, 233, 232);
+	color: black;
+	font-weight: 400;
+	text-align: left;
+	width: 80%;
+}
+
+/* RESOURCE: https://codepen.io/ericrasch/pen/zjDBx */
+/*select.challengesList, select.challengesList option {
+   -webkit-appearance: button;
+   -webkit-border-radius: 0;
+   -webkit-box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
+   /*-webkit-padding-end: 10vh;*/
+   /*-webkit-padding-start: 5vh;*/
+/*   -webkit-user-select: none;
+   background: url(../images/down_arrow.png), -webkit-linear-gradient(#FAFAFA, #F4F4F4 40%, #E5E5E5);
+   background-position: 97% end;
+   background-repeat: no-repeat;
+   background: white;*/
+   /*background: rgb(217, 238, 227);*/
+   /*border: 1px solid rgb(224, 233, 232);*/
+   /*color: rgb(84, 84, 84);*/
+   /*color: black;*/
+   /*font-size: inherit;*/
+   /*overflow: hidden;*/
+/*   padding: 2.4%;
+   text-overflow: ellipsis;
+   white-space: nowrap;
+   width: 80%;
+}*/
+
+
+/*==== RADIO ====*/
+#challengesList p {
+	border: 0;
+	/*border-bottom: 1px solid white;*/
+	/*border-left: 1px solid rgb(224, 233, 232);*/
+	border: none;
+	font-size: 0.75em;
+	font-family: 'Source Sans Pro', sans-serif;
+	text-align: left;
+	color: #bd1414;
+	font-weight: 400;
+	padding: 2%;
+}
+
+.challengesList {
+	display: flex;
+	justify-content: space-between;
+	flex-direction: row;
+	text-align: center;
+	width: 80%;
+	background: white;
+	border: 0 solid rgb(224, 233, 232);
+	border-top: 0;
+	padding: 2% 1% 2% 2%;
+}
+
+.challengesList div {
+	display: flex;
+	justify-content: center;
+	width: 13%;
+}
+
+.challengesList div label {
+	text-align: center;
+	color: #bd1414;
+	font-weight: 400;
+}
+
+input[name=challenge]{
+  display: none;
+}
+
+input[name=challenge] + label::after{
+  content:"";
+  display: block;
+  width: 1em;
+  height: 1em;
+  background: white;
+  border: 1px solid rgb(84, 84, 84);
+  margin-left: 20px;
+  margin-top: 5px;
+}
+
+input[class=one] + label::after{
+	margin-top: 17px;
+}
+
+input[id=hr] + label::after{
+	margin-left: 40%;
+}
+
+input[class=two] + label::after{
+	margin-left: 40%;
+}
+
+input[name=challenge]:checked + label::after {
+  content: "\2713";
+  background:#bd1414;
+  text-align:center;
+}
+
+/*======*/
+
+#challengeDescription {
+	border-top: 4px solid rgb(224, 233, 232);
+}
+
+form #submit, button {
+	padding: 2.4%;
+	background: rgb(84, 84, 84);
+	text-transform: uppercase;
+	border: 2px solid rgb(224, 233, 232);
+	color: white;
+}
+
+form #submit:hover, button:hover {
+	background: rgb(124, 124, 124);
+}
+
+form input::placeholder, textarea::placeholder, select.challengesList, select.challengesList option {
+	color: #bd1414;
+	font-weight: 400;
+}
+
+#applicationForm aside small {
+	padding-top: 5%;
+	text-align: left; 
+	color: rgb(84, 84, 84);
+	font-weight: 400;
+}
+
+#applicationFooter {
+	grid-area: c;
+}
+
+#thankyou_message {
+	height: 50vh;
+	width: 100vw;
+	/*background: rgb(224, 233, 232);*/
+	background: white;
+}
+
+#thankyou_message h2 {
+	padding: 8%;
+	color: rgb(84, 84, 84);
+}
+
+/*=============================================================================================*/
+/*         mobile version         */
+
+/*carousel*/
+@media (max-device-width: 1024px) {
+  body {
+  	background: blue;
+  }
+  .arrow {
+    width: 20%;
+  }
+}
+
+@media (max-width: 768px) {
+  body {
+  	background: red;
+  }
+  .arrow {
+    width: 10%;
+  }
+}
+
+@media screen and (max-width: 780px){
+	
+	}
+
+

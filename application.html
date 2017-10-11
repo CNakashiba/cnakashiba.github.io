@@ -1,0 +1,154 @@
+<!-- add a password field -->
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Kompas Small Business Coaching Application</title>
+  <link href="https://fonts.googleapis.com/css?family=Cormorant+Garamond:300,300i,400,400i" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,300i, 400" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.css"> 
+  <link rel="stylesheet" href="css/style.css">
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
+  <script type="text/javascript" src="js/script.js"></script>
+  <meta charset="utf-8">
+  <meta name="description" content="Kompas Small Business Coaching. Description in one sentence here.">
+<!-- favicon -->
+  <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+
+
+
+</head>
+<body>
+<!-- ================================ HEADER ================================  -->
+  <header id="header" class="application">
+    <div id="headerContents" id="applicationHeader">
+      <div class="logo">
+        <a href="http://www.kompasstrategy.com" alt="Kompas Strategy Website Link">
+        <img class="headerLogo" src="images/kLogo.svg" alt="Kompas Strategy Logo">
+        </a>
+      </div>
+      <nav id="headerNav">
+        <ul id="headerLinks">
+          <li class="a"><a href="#about"></a></li> 
+          <li class="a"><a href="#coaching"></a></li>
+          <li class="a"><a href="#form"></a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+<!-- ================================ FORM ================================  -->
+  <aside id="applicationForm" id="contactNav">
+    <h2>Small Business Coaching Application Form</h2>
+    <div class="form">
+      <form enctype="multipart/form-data" id="gform" method="POST" class="pure-form pure-form-stacked"
+  action="https://script.google.com/a/kompasstrategy.com/macros/s/AKfycbwI_C9tNIWH5nex4r58nwZrHrvnKKb9wYD5qLIl6cJN53d62JBe/exec">
+
+        <input required type="text" placeholder="Full Name" name="name" id="name" class="main">
+        <input required type="email" placeholder="Email" name="email" id="email" class="main">
+        <input required type="tel" placeholder="Mobile Number" name="mobile" id="mobileNumber" class="main">
+        <input required type="text" placeholder="Company Name" name="company" id="companyName" class="main">
+        <input type="text" placeholder="Company Website" name="website" id="companyWebsite" class="main">
+        <input type="text" placeholder="Industry" name="industry" id="industry" class="main">
+        <input required type="text" placeholder="Your Title In Your Company" name="title" id="title" class="main">
+        <textarea required placeholder="Company Description" name="description" id="companyDescription" class="main" style="width:80%;height:150px;"></textarea>
+
+        <!-- https://codepen.io/ericrasch/pen/zjDBx -->
+<!--         <select required name="Challenges" class="challengesList">
+          <option value="Blank" name="Blank">What Challenge Are You Facing?</option>
+          <option value="Strategy" name="Strategy">Business Strategy &amp; Operations</option>
+          <option value="Finance">Financials &amp; Bookkeeping</option>
+          <option value="Human Resources">Human Resources</option>
+          <option value="Lending">Lending</option>
+          <option value="Marketing">Marketing</option>
+        </select> -->
+        
+        <!-- reference: https://codepen.io/CNakashiba/pen/VzgjOK?editors=1100 -->
+        <div id="challengesList">
+          <p>What area are you most challenged with?</p>
+          <div class="challengesList">
+            <div>
+              <input name="challenge" type="radio" id="strategy" class="two" name="strategy">
+              <label for="strategy">Strategy &amp; Operations</label>            
+            </div>
+
+            <div>
+              <input name="challenge" type="radio" id="financials" class="two" name="finanicals">
+              <label for="financials">Financials &amp; Bookkeeping</label>            
+            </div>  
+
+            <div>
+              <input name="challenge" type="radio" id="hr" class="one" name="hr">
+              <label for="hr">Human Resources</label>             
+            </div>
+   
+            <div>
+              <input name="challenge" type="radio" id="lending" class="one" name="lending">
+              <label for="lending">Lending</label>            
+            </div>
+
+            <div>
+              <input name="challenge" type="radio" id="marketing" class="one" name="marketing">
+              <label for="marketing">Marketing</label>
+            </div>
+          </div>
+        </div>
+
+        <textarea required placeholder="Describe Your Business Challenge" name="challenge" id="challengeDescription" class="main" style="width:80%;height:150px;"></textarea>
+
+        <textarea required placeholder="Why Did You Start Your Company" name="why" id="companyWhy" class="main" style="width:80%;height:150px;"></textarea>
+
+        <!-- <input type="submit" placeholder="SUBMIT" name="Submit" id="submit"> --> 
+        <br>
+        <!-- <button><i class="fa fa-paper-plane"></i>&nbsp;Send</button> -->
+        <button class="button-success pure-button button-xlarge">
+        <i class="fa fa-paper-plane"></i>&nbsp;Send</button>
+
+      </form>
+      <small class="footnotes">We have a limited number of time slots available and not all businesses that apply will qualify.</small>
+    </div>
+  </aside>
+
+
+<!-- ================================ THANK YOU PAGE ================================  -->
+<!-- RESOURCE: https://github.com/dwyl/html-form-send-email-via-google-script-without-server -->
+
+    <!-- Customise the Thankyou Message People See when they submit the form: -->
+  <div style="display:none;" id="thankyou_message">
+    <h2><em>Thank you</em> for applying!
+      We will get back to you soon!</h2>
+  </div>
+
+
+
+<!-- ================================ FOOTER ================================  -->
+  <footer id="footer applicationFooter">
+    <div class="footer">
+      <div class="headerArrow">
+        <!-- https://designshack.net/articles/html/how-to-link-to-specific-points-in-a-page-and-animate-the-scroll/ -->
+        <a href="#header" alt="Click arrow to go to the top of the page.">
+        <img class="arrowToTop" src="images/arrow_white_10x15.svg" alt="Arrow pointing up.">
+        </a>
+      </div>
+      <div class="kompasFooter">
+        <div class="logo noBorder">
+          <a href="http://www.kompasstrategy.com" alt="Kompas Strategy Website Link">
+          <img class="footerLogo" src="images/kLogo_white_transparent_30px.png" alt="Kompas Strategy Logo">
+          </a>
+          <small>2017 Kompas. All rights reserved.</small>
+        </div>
+      </div>
+      <div class="contact noBorder"> 
+        <div class="socialLinks noBorder">
+          <a href="https://www.linkedin.com"><img src="images/f_linkedin_white_50.png" alt="Link to the LinkedIn website."></a>
+          <a href="https://www.facebook.com"><img src="images/f_facebook_white_50.png" alt="Link to the Facebook website."></a>
+        </div>
+        <small>Questions? Reach out : <a href="mailto:info@KompasStrategy.com?Subject=[small business coaching] Question" target="_top">info@kompasstrategy.com</a></small>
+      </div>  
+    </div>    
+  </footer>
+</body>
+
+</html>
